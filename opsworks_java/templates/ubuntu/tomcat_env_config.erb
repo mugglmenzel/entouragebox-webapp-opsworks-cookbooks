@@ -36,7 +36,7 @@ JAVA_OPTS="<%= node['opsworks_java']['tomcat']['java_opts'] %>"
 
 # Location of the JVM temporary directory
 # WARNING: This directory will be destroyed and recreated at every startup !
-#JVM_TMP=/tmp/tomcat<%= node['opsworks_java']['tomcat']['base_version'] %>-temp
+JVM_TMP=/tmp/tomcat<%= node['opsworks_java']['tomcat']['base_version'] %>-temp
 
 # If you run Tomcat on port numbers that are all higher than 1023, then you
 # do not need authbind.  It is used for binding Tomcat to lower port numbers.
