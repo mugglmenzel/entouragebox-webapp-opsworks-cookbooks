@@ -31,3 +31,8 @@ file "/etc/profile.d/jdk.sh" do
   content "export JAVA_HOME=#{node['java']['java_home']}"
   mode 00755
 end
+
+link "/usr/lib/jvm/default-java" do
+  to node['java']['java_home']
+  action :create
+end
