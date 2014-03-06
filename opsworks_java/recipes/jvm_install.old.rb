@@ -79,6 +79,4 @@ remote_file local_custom_pkg_file do
   end
 end
 
-include_recipe 'java'
-
 include_recipe 'opsworks_java::tomcat_setup'
