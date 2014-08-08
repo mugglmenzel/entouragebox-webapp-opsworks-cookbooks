@@ -30,8 +30,8 @@
   FileETag none
 
   RewriteEngine On
-  ReWriteCond %{SERVER_PORT} !^443$
-  RewriteRule ^/(.*) https://%{HTTP_HOST}/$1 [NC,R,L]
+  RewriteCond %{HTTP:X-Forwarded-Proto} http
+  RewriteRule https://%{HTTP_HOST}%{REQUEST_URI} [NC,R=301,L]
   Include <%= @params[:rewrite_config] %>*
   RewriteLog <%= node[:apache][:log_dir] %>/<%= @application_name %>-rewrite.log
   RewriteLogLevel 0
